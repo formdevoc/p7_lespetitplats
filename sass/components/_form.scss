@@ -1,0 +1,29 @@
+$categories: ingredients $blue, appareils $teal, ustensils $red;
+
+@each $category in $categories {
+  .#{nth($category, 1)} {
+    background: nth($category, 2);
+    color: $white;
+
+    &:focus {
+      box-shadow: none;
+      background-color: nth($category, 2);
+      color: $white;
+
+      &::placeholder {
+        opacity: 0.5;
+        text-transform: none;
+      }
+    }
+
+    &::placeholder {
+      color: $white;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.fa-magnifying-glass {
+  font-size: 26px;
+}

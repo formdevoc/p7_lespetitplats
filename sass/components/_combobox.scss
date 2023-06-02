@@ -1,0 +1,50 @@
+.combobox-wrapper {
+  max-width: calc(100% / 6);
+
+  @media (max-width: 992px) {
+    min-width: calc(100% / 3);
+  }
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .fa-chevron-down {
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  &.active {
+    min-width: 50%;
+
+    @media (max-width: 992px) {
+      min-width: calc(100% / 3 * 2);
+    }
+    @media (max-width: 768px) {
+      min-width: 100%;
+    }
+
+    .input-group {
+      z-index: -1;
+    }
+
+    .content {
+      max-height: 24rem;
+      overflow: auto;
+      line-height: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-radius: 0 0 0.5rem 0.5rem;
+      margin-top: -10px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .fa-chevron-down {
+      transform: rotate(180deg);
+    }
+  }
+}
